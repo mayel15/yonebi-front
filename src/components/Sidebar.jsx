@@ -1,30 +1,73 @@
 import React from 'react';
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+
 
 
 export default function Sidebar() {
+    let categories = [], subjects = [];
+    const fetchData = async () => {
+
+        await fetch(`http://localhost:8000/api/categories`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                categories = data;
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+
+        await fetch(`http://localhost:8000/api/subjects`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                subjects = data
+
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+
+        console.log('here')
+        console.log(subjects[0].name)
+        console.log(categories[0].name)
+    };
+
+    fetchData();
+    
+
     return (
-      <nav className="sidebar">
-        <ul className="sidebar-nav">
-          <li>
-            <Link to="/sujet1">Sujet 1</Link>
-            <ul className="sub-nav">
-              <li><Link to="/sujet1/categorie1">Catégorie 1</Link></li>
-              <li><Link to="/sujet1/categorie2">Catégorie 2</Link></li>
-              <li><Link to="/sujet1/categorie3">Catégorie 3</Link></li>
+        <nav className="sidebar">
+            <ul className="sidebar-nav">
+                {subjects.map((s, index)=>{
+                    return (
+                        <li key={index} id={index}>
+                            <Link to={"/"+s.name}>{s.name}</Link>
+                            <ul className="sub-nav">
+                                {categories.map((c, index)=>{
+                                    return <li key={index} id={index}><Link to={"/"+s.name+"/"+c.name}>{c.name}</Link></li>
+                                    
+                                })}
+
+                            </ul>
+                        </li>
+                    )
+                })
+                }
+                {/* Ajoutez d'autres sujets et catégories selon vos besoins */}
             </ul>
-          </li>
-          <li>
-            <Link to="/sujet2">Sujet 2</Link>
-            <ul className="sub-nav">
-              <li><Link to="/sujet2/categorie1">Catégorie 1</Link></li>
-              <li><Link to="/sujet2/categorie2">Catégorie 2</Link></li>
-              <li><Link to="/sujet2/categorie3">Catégorie 3</Link></li>
-            </ul>
-          </li>
-          {/* Ajoutez d'autres sujets et catégories selon vos besoins */}
-        </ul>
-      </nav>
+        </nav>
     );
 }
-  
+

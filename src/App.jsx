@@ -19,7 +19,7 @@ function App() {
         <Sidebar />
         <div className="content">
           <Routes>
-            <Route path="/:sujet/:categorie" element={CategoryPage} />
+            <Route path="/:sujet/:categorie" element={<CategoryPage />} />
           </Routes>
 
         </div>
