@@ -1,16 +1,14 @@
 import React from "react";
 import './HeaderNav.css';
 import { Link } from "react-router-dom";
+import Search from "../Search";
 
 export default function HeaderNav() {
     return (
-        <nav class="navbar bg-body-tertiary header-nav">
+        <nav class="navbar bg-body-tertiary header-nav content-section">
             <div class="container-fluid">
                 <a href="/" class="navbar-brand">yonebi.</a>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-dark" type="submit">Search</button>
-                </form>
+                <Search />
                 <div className="icons-header">
                     <div>
                         <Link to="/"><i class="fa-solid fa-circle-info"></i></Link>

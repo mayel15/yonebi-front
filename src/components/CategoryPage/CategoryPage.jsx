@@ -32,7 +32,7 @@ export default function CategoryPage() {
   }, []);
 
   return (
-    <div className="row content-homepage">
+    <div className="row content-section">
       {/*<h1>{subject}</h1>
       <h2>{category}</h2>*/}
       <Sidebar />

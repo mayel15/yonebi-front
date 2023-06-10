@@ -1,9 +1,9 @@
 import React from "react";
-import Search from "./Search";
-import Resource from "./Resource/Resource";
+import Search from "../Search";
+import Resource from "../Resource/Resource";
 import { useState, useEffect } from "react";
-import HeaderNav from "./Header/HeaderNav";
-import Sidebar from "./Sidebar/Sidebar";
+import HeaderNav from "../Header/HeaderNav";
+import Sidebar from "../Sidebar/Sidebar";
 
 export default function Homepage() {
   const [resources, setResources] = useState([]);
@@ -30,23 +30,11 @@ export default function Homepage() {
   }, []);
 
   return (
-    <div>
-    
-    <Sidebar />
-      {/*<h1>Homepage</h1>*/}
-      {/*<Search />*/}
-      <div className="resourcs-section row">
-        {/*resources.map((r, index) => (
-          <Resource
-            title={r.title}
-            key={r.id}
-            url={r.url}
-            authors={r.authors[1]}
-            addedAt={r.addedAt}
-            updatedAt={r.addedAt}
-            description={r.description}
-          />
-        ))*/}
+    <div className="row content-section">
+      <Sidebar />
+      <div className="welcome-section col-lg-9">
+        <h2>Bienvenue dans yonebi. </h2>
+        <p>Votre banque de liens de ressources numériques</p>
       </div>
     </div>
   );

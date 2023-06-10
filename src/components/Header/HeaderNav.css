@@ -1,4 +1,7 @@
 .header-nav{
-    padding: 0 10%;
     box-shadow: 3px 3px 3px grey;
+}
+
+.content-section {
+    padding: 0 10%;
 }
