@@ -7,7 +7,7 @@ export default function () {
             <Sidebar />
             <div className="welcome-section col-lg-9">
                 <h2>Bienvenue dans l'admin de yonebi. </h2>
-                <p>Votre banque de liens de ressources numériques</p>
+                <p>Votre banque de liens de ressources numériques</p>              
             </div>
         </div>
     )
