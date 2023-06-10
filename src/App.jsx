@@ -9,6 +9,7 @@ import CategoryPage from './components/CategoryPage/CategoryPage';
 import Resource from './components/Resource/Resource';
 
 import Sidebar from './components/Sidebar/Sidebar';
+import AddResource from './components/AddResource/AddResource';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/admin/login' element={<Login access="login" />} />
         <Route path='/admin/signup' element={<Login access="signup" />} />
         <Route path='/admin/gestion' element={<Gestion />} />
+        <Route path='/admin/add' element={<AddResource />} />
         <Route path='/:subject/:category' element={<CategoryPage />} />
       </Routes>
     </Router>
