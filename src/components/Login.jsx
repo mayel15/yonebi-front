@@ -15,6 +15,10 @@ export default function Login(props) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        if(formData.username==="" || formData.password===""){
+            alert('Au moins un champ du formulaire est vide. :(')
+        }else{
         
         await fetch(`http://localhost:8000/api/useradmin/${props.access}`, {
             method: "POST",
@@ -27,12 +31,14 @@ export default function Login(props) {
             .then((data) => {
                 console.log(data);
                 (props.access === "login")
-                ? window.location.href = '/admin/gestion'
+                ? window.location.href = '/admin/home'
                 : window.location.href = '/admin/login'
             })
             .catch((error) => {
                 console.error(error);
             });
+
+        }
     };
 
     return (

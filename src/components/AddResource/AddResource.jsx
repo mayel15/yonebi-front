@@ -27,6 +27,14 @@ export default function AddResource() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        if(formData.title === "" 
+        || formData.url === ""
+        || formData.description === ""
+        || formData.authors === ""
+        || formData.subject === ""
+        || formData.category === ""){
+            alert('Au moins un champ du formulaire est vide. :(')
+        }else{
         await fetch('http://localhost:8000/api/resources/add', {
             method: "POST",
             headers: {
@@ -37,11 +45,12 @@ export default function AddResource() {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                window.location.href = '/'
+                window.location.href = '/admin/home'
             })
             .catch((error) => {
                 console.error(error);
             });
+        }
     };
 
     const toggleS = () => {
