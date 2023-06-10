@@ -1,14 +1,15 @@
 import React from "react";
+import './Resource.css'
+
 export default function Resource(props){
 
     return (
-        <div className="resource col-lg-6">
-            <h1> <a href={props.url} target="blank">{props.title}</a> </h1>
-            <p>{props.description}</p>
-            <p><strong>Auteurs</strong> : {props.authors}</p>
-            <p>Ajouté : {props.addedAt}</p>
-            <p>{props.subject + " > " +props.category}</p>
-            
+        <div className="resource-card col-lg-12">
+            <h3> <a href={props.url} target="blank">{props.title}</a></h3>
+            <div>{props.description}</div>
+            <div>Auteurs / Sources : {props.authors}</div>
+            <div>{props.subject + " > " +props.category}</div>
+            <p>{props.addedAt}</p>  
         </div>
     )
 }

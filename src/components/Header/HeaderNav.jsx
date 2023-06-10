@@ -1,5 +1,6 @@
 import React from "react";
 import './HeaderNav.css';
+import { Link } from "react-router-dom";
 
 export default function HeaderNav() {
     return (
@@ -12,10 +13,10 @@ export default function HeaderNav() {
                 </form>
                 <div className="icons-header">
                     <div>
-                        <a href="/"><i class="fa-solid fa-circle-info"></i></a>
+                        <Link to="/"><i class="fa-solid fa-circle-info"></i></Link>
                     </div>
                     <div>
-                        <a href="/admin/login"><i class="fa-solid fa-right-to-bracket"></i></a>
+                        <Link to="/admin/login"><i class="fa-solid fa-right-to-bracket"></i></Link>
                     </div>
                 </div>
 

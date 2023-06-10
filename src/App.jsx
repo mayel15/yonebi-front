@@ -5,7 +5,7 @@ import Login from './components/Login';
 import Gestion from './components/Gestion';
 import HeaderNav from './components/Header/HeaderNav';
 import './App.css'
-import CategoryPage from './components/CategoryPage';
+import CategoryPage from './components/CategoryPage/CategoryPage';
 import Resource from './components/Resource/Resource';
 
 import Sidebar from './components/Sidebar/Sidebar';
@@ -14,7 +14,6 @@ function App() {
   return (
     <Router >
       <HeaderNav />
-      <Sidebar />
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/admin/login' element={<Login access="login" />} />

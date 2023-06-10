@@ -2,6 +2,8 @@ import React from "react";
 import Search from "./Search";
 import Resource from "./Resource/Resource";
 import { useState, useEffect } from "react";
+import HeaderNav from "./Header/HeaderNav";
+import Sidebar from "./Sidebar/Sidebar";
 
 export default function Homepage() {
   const [resources, setResources] = useState([]);
@@ -29,6 +31,8 @@ export default function Homepage() {
 
   return (
     <div>
+    
+    <Sidebar />
       {/*<h1>Homepage</h1>*/}
       {/*<Search />*/}
       <div className="resourcs-section row">

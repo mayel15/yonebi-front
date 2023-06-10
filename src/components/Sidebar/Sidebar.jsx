@@ -34,7 +34,7 @@ export default function Sidebar() {
   }, []);
 
   return (
-        <nav className="sidebar">
+        <nav className="sidebar col-lg-3">
             <ul className="sidebar-nav">
                 {subjects.map((s, index)=>{
                     return (
