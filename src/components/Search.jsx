@@ -17,7 +17,7 @@ export default function Search() {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-        },
+        }
       });
 
       const data = await response.json();
@@ -37,8 +37,21 @@ export default function Search() {
     }
   };
 
+  /*const search = (query, data) => {
+    const filteredData = data.filter((item) => {
+      // Remplacez "property" par le nom de la propriété sur laquelle vous souhaitez effectuer la recherche
+      const propertyValue = item.property.toLowerCase(); // Convertir en minuscules pour une recherche insensible à la casse
+      const queryValue = query.toLowerCase();
+      
+      // Condition de recherche, vous pouvez ajuster la logique en fonction de vos besoins
+      return propertyValue.includes(queryValue);
+    });
+  
+    return filteredData;
+  };*/
+
   return (
-    <div>
+    <div className="col-lg-6">
       <input
         type="search"
         value={inputSearch}

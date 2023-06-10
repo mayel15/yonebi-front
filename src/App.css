@@ -1,30 +1,3 @@
-.container {
-  display: flex;
-}
-
-.sidebar {
-  width: 200px;
-  background-color: #f2f2f2;
-}
-
-.sidebar-nav {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar-nav a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-}
-
-.sidebar-nav .sub-nav {
-  list-style-type: none;
-  padding: 0;
-  margin-left: 20px;
-}
-
-.sidebar-nav .sub-nav li a {
-  padding: 5px;
-}
+/*body{
+  
+}*/
