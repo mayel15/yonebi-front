@@ -4,6 +4,7 @@ import Resource from "../Resource/Resource";
 import { useState, useEffect } from "react";
 import HeaderNav from "../Header/HeaderNav";
 import Sidebar from "../Sidebar/Sidebar";
+import './Homepage.css';
 
 export default function Homepage() {
   const [resources, setResources] = useState([]);
