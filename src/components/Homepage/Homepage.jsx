@@ -20,7 +20,7 @@ export default function Homepage() {
 
         const data = await response.json();
         console.log(data);
-        setResources(data);
+        setResources(data.slice(0,10));
       } catch (error) {
         console.error(error);
       }
@@ -34,8 +34,28 @@ export default function Homepage() {
       <Sidebar />
       <div className="welcome-section col-lg-9">
         <h2>Bienvenue dans yonebi. </h2>
-        <p>Votre banque de liens de ressources numériques</p>
+        <p>Votre banque de liens de ressources numériques.<br/>Accéder aux meilleures formations gratuites.</p>
+        
+        <h3> Voici quelques unes ! </h3>
+        <div className="row">
+          {
+            resources.map((r, index) => (
+              <Resource
+                title={r.title}
+                key={r.id}
+                url={r.url}
+                authors={r.authors}
+                addedAt={r.addedAt.toString()}
+                description={r.description}
+                subject={r.subject}
+                category={r.category}
+                id={r._id}
+              />))
+          }
+        </div>
+      
       </div>
+      
     </div>
   );
 }
