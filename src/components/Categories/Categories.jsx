@@ -29,9 +29,9 @@ export default function Categories() {
     }, []);
 
     return (
-        <div className="content-section ">
+        <div className=" content-section ">
             <GestionButtons />
-            <h3 className="col-lg-12 content-center">Gérer les catégories</h3>
+            <h3 className="text-center col-lg-12 content-center">Gérer les catégories</h3>
             <div className="content-center row">
 
                 {

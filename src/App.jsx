@@ -26,7 +26,7 @@ function App() {
         <Route path='/admin/add' element={<AddResource />} />
         <Route path='/admin/home' element={<AdminHome/>} />
         <Route path='/admin/subjects' element={<Subjects />} />  
-        <Route path='/:subject/' element={<Categories />} />
+        <Route path='/admin/categories' element={<Categories />} />
         <Route path='/admin/:subject/:category' element={<CategoryPage view='admin'/>} />
       </Routes>
     </Router>

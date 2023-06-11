@@ -32,7 +32,7 @@ export default function Subjects() {
     return (
         <div className="content-section ">
             <GestionButtons />
-            <h3 className="col-lg-12 content-center">Gérer les sujets</h3>
+            <h3 className="text-center col-lg-12 content-center">Gérer les sujets</h3>
             <div className="content-center row">
 
                 {

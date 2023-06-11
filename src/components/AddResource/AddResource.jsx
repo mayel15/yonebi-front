@@ -98,8 +98,9 @@ export default function AddResource() {
     }, []);
 
     return (
-        <div>
+        <div className="text-center">
         <GestionButtons />
+        <h3>Ajout d'une ressource</h3>
             <button
                 onClick={toggleS}
             >

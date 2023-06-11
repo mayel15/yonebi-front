@@ -42,7 +42,7 @@ export default function Login(props) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="text-center" onSubmit={handleSubmit}>
             {
                 (props.access === "login")
                 ? <h1>Se connecter</h1>

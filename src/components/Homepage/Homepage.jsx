@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import HeaderNav from "../Header/HeaderNav";
 import Sidebar from "../Sidebar/Sidebar";
 import './Homepage.css';
+import Footer from "../Footer/Footer";
 
 export default function Homepage() {
   const [resources, setResources] = useState([]);
@@ -31,13 +32,14 @@ export default function Homepage() {
   }, []);
 
   return (
+    <div>
     <div className="row content-section content-center">
       <Sidebar />
       <div className="welcome-section col-lg-9">
-        <h2>Bienvenue dans yonebi. </h2>
-        <p>Votre banque de liens de ressources numériques.<br/>Accéder aux meilleures formations gratuites.</p>
+        <h2 className="text-center">Bienvenue dans yonebi. </h2>
+        <p className="text-center">Votre banque de liens de ressources numériques.<br/>Accéder aux meilleures formations gratuites.</p>
         
-        <h3> Voici quelques unes ! </h3>
+        <h3 className="text-center"> Voici quelques unes ! </h3>
         <div className="row">
           {
             resources.map((r, index) => (
@@ -57,6 +59,8 @@ export default function Homepage() {
       
       </div>
       
+    </div>
+    <Footer />
     </div>
   );
 }

@@ -2,3 +2,9 @@
     padding: 3%;
     box-shadow: 0px 3px 3px grey;
 }
+
+.text-center{
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+}

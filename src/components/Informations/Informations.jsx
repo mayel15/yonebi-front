@@ -6,7 +6,7 @@ export default function Informations() {
 
     return (
         <div className="content-section">
-        <h3>yonebi. , c'est quoi ? </h3>
+        <h3 className="text-center">yonebi. , c'est quoi ? </h3>
             <div className="texte-informations">
                 {texte}
             </div>

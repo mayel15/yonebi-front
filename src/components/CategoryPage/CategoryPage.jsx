@@ -2,7 +2,9 @@ import { useParams } from 'react-router-dom';
 import Resource from '../Resource/Resource';
 import { React, useState, useEffect } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
+import Footer from '../Footer/Footer';
 import './CategoryPage.css'
+import GestionButtons from '../GestionButtons/GestionButtons';
 
 
 export default function CategoryPage(props) {
@@ -32,50 +34,63 @@ export default function CategoryPage(props) {
   }, []);
 
   return (
-    <div className="row content-section">
-      {/*<h1>{subject}</h1>
+    <div>
+      <div className="row content-section">
+        {/*<h1>{subject}</h1>
       <h2>{category}</h2>*/}
-      {
-        (props.view==='admin')
-        ? <Sidebar view='admin'/>
-        : <Sidebar />
-      }
-      
-      <div className='col-lg-9'>
-        <div className='row'>
-          <h3 className='nav-result col-lg-12'>{subject + ' > ' + category}</h3>
-          {(props.view === 'admin')
-            ?(resources.filter((r) => (r.subject === subject && r.category === category))
-            .map((r, index) => (
-              <Resource
-                title={r.title}
-                key={r.id}
-                url={r.url}
-                authors={r.authors}
-                addedAt={r.addedAt.toString()}
-                description={r.description}
-                subject={r.subject}
-                category={r.category}
-                id={r._id}
-                view='admin'
-              />)))
-            : (resources.filter((r) => (r.subject === subject && r.category === category))
-            .map((r, index) => (
-              <Resource
-                title={r.title}
-                key={r.id}
-                url={r.url}
-                authors={r.authors}
-                addedAt={r.addedAt.toString()}
-                description={r.description}
-                subject={r.subject}
-                category={r.category}
-                id={r._id}
-              />)))
+        {
+          (props.view === 'admin')
+            ? <Sidebar view='admin' />
+            : <Sidebar />
+        }
+
+        <div className='col-lg-9'>
+          <div className='row'>
+            <h3 className='nav-result col-lg-12 text-center'>{subject + ' > ' + category}</h3>
+            {
+              (props.view === 'admin')
+              ? (
+                <div>
+                  <h3 className='text-center' >Admin de yonebi.</h3> 
+                  <GestionButtons />
+                </div>
+              )
+              : null
+            }
+            {(props.view === 'admin')
+              ? (resources.filter((r) => (r.subject === subject && r.category === category))
+                .map((r, index) => (
+                  <Resource
+                    title={r.title}
+                    key={r.id}
+                    url={r.url}
+                    authors={r.authors}
+                    addedAt={r.addedAt.toString()}
+                    description={r.description}
+                    subject={r.subject}
+                    category={r.category}
+                    id={r._id}
+                    view='admin'
+                  />)))
+              : (resources.filter((r) => (r.subject === subject && r.category === category))
+                .map((r, index) => (
+                  <Resource
+                    title={r.title}
+                    key={r.id}
+                    url={r.url}
+                    authors={r.authors}
+                    addedAt={r.addedAt.toString()}
+                    description={r.description}
+                    subject={r.subject}
+                    category={r.category}
+                    id={r._id}
+                  />)))
 
             }
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
