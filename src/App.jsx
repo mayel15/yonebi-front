@@ -25,6 +25,7 @@ function App() {
         <Route path='/admin/subjects' element={<Subjects />} />
         <Route path='/admin/categories' element={<Categories />} />
         <Route path='/:subject/:category' element={<CategoryPage />} />
+        <Route path='/:subject/' element={<Categories />} />
         <Route path='/admin/:subject/:category' element={<CategoryPage view='admin'/>} />
       </Routes>
     </Router>

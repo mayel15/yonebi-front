@@ -30,7 +30,7 @@ export default function Homepage() {
   }, []);
 
   return (
-    <div className="row content-section">
+    <div className="row content-section content-center">
       <Sidebar />
       <div className="welcome-section col-lg-9">
         <h2>Bienvenue dans yonebi. </h2>

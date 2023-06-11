@@ -40,7 +40,8 @@ export default function Sidebar(props) {
                 {subjects.map((s, index)=>{
                     return (
                         <li key={index} id={index}>
-                            <Link to={"/"+s.name}>{s.name}</Link>
+                            {/*<Link to={"/"+s.name}>{s.name}</Link>*/}
+                            <div>{s.name}</div>
                             <ul className="sub-nav">
                                 {categories.map((c, index)=>{
                                     return (c.subject === s.name)
