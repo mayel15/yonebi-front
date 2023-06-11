@@ -11,7 +11,7 @@ export default function HeaderNav() {
                 <Search />
                 <div className="icons-header">
                     <div>
-                        <Link to="/"><i class="fa-solid fa-circle-info"></i></Link>
+                        <Link to="/infos"><i class="fa-solid fa-circle-info"></i></Link>
                     </div>
                     <div>
                         <Link to="/admin/login"><i class="fa-solid fa-right-to-bracket"></i></Link>
