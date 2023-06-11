@@ -49,6 +49,7 @@ export default function CategoryPage() {
                 description={r.description}
                 subject={r.subject}
                 category={r.category}
+                id={r._id}
               />
 
             ))}

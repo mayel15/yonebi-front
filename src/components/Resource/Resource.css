@@ -3,3 +3,11 @@
     margin: 1rem;
     border-radius: 20px;
 }
+
+.icons {
+    display: flex;
+}
+
+.icon-card {
+    margin: 10px;
+}
