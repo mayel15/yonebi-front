@@ -16,6 +16,7 @@ export default function AddResource() {
     const [temoinC, setTemoinC] = useState(false)
     const [categories, setCategories] = useState([]);
     const [subjects, setSubjects] = useState([]);
+    const [rsources, s] = useState([]);
 
     const handleChange = (event) => {
         setFormData({
@@ -88,6 +89,16 @@ export default function AddResource() {
                 });
                 const subjectsData = await subjectsResponse.json();
                 setSubjects(subjectsData);
+
+                const resourcesResponse = await fetch('http://localhost:8000/api/resources', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                const resourcesData = await subjectsResponse.json();
+                const resourcesFiltered = resourcesData.filter((r)=>{}).
+                setFormData(subjectsData);
             } catch (error) {
                 console.error(error);
             }
@@ -175,7 +186,7 @@ export default function AddResource() {
                 <button
                     type="submit"
                 >
-                    Ajouter
+                    Modifier
                 </button>
             </form>
 
