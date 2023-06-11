@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 export default function GestionButtons() {
     return (
         <div className="text-center button-gestion">
+            <button>
+                <Link to='/admin/home/' >Gérer les ressources</Link>
+            </button>
             <button
             >
                 <Link to='/admin/add' >Ajouter une ressource</Link>
