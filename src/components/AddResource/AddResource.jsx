@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import GestionButtons from "../GestionButtons/GestionButtons";
 
 
 
@@ -98,6 +99,7 @@ export default function AddResource() {
 
     return (
         <div>
+        <GestionButtons />
             <button
                 onClick={toggleS}
             >

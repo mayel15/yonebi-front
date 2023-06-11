@@ -16,6 +16,7 @@ export default function Resource(props) {
         })
             .then((response) => response.json())
             .then((data) => {
+                window.location.href = '/admin/home'
                 console.log(data);
             })
             .catch((error) => {
@@ -24,6 +25,7 @@ export default function Resource(props) {
     }
 
     const handleEdit = async () => {
+        window.location.href = '/admin/editResource'
 
     }
 
