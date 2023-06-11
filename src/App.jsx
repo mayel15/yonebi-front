@@ -9,6 +9,8 @@ import Resource from './components/Resource/Resource';
 import Sidebar from './components/Sidebar/Sidebar';
 import AddResource from './components/AddResource/AddResource';
 import AdminHome from './components/AdminHome/AdminHome';
+import Categories from './components/Categories/Categories';
+import Subjects from './components/Subjects/Subjects';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path='/admin/signup' element={<Login access="signup" />} />
         <Route path='/admin/add' element={<AddResource />} />
         <Route path='/admin/home' element={<AdminHome/>} />
+        <Route path='/admin/subjects' element={<Subjects />} />
+        <Route path='/admin/categories' element={<Categories />} />
         <Route path='/:subject/:category' element={<CategoryPage />} />
         <Route path='/admin/:subject/:category' element={<CategoryPage view='admin'/>} />
       </Routes>

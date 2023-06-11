@@ -31,7 +31,7 @@ export default function Homepage() {
 
   return (
     <div className="row content-section">
-      <Sidebar view='admin'/>
+      <Sidebar />
       <div className="welcome-section col-lg-9">
         <h2>Bienvenue dans yonebi. </h2>
         <p>Votre banque de liens de ressources numériques</p>

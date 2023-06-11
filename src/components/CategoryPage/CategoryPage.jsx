@@ -43,6 +43,7 @@ export default function CategoryPage(props) {
       
       <div className='col-lg-9'>
         <div className='row'>
+          <h3 className='nav-result col-lg-12'>{subject + ' > ' + category}</h3>
           {(props.view === 'admin')
             ?(resources.filter((r) => (r.subject === subject && r.category === category))
             .map((r, index) => (
