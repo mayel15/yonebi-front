@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
 
-export default function () {
+export default function AdminHome() {
     return (
         <div className="row content-section">
             <Sidebar />
