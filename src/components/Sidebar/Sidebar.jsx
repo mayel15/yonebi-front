@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Sidebar.css'
 import { Link } from 'react-router-dom';
 
-export default function Sidebar() {
+export default function Sidebar(props) {
   const [categories, setCategories] = useState([]);
   const [subjects, setSubjects] = useState([]);
 
@@ -44,7 +44,9 @@ export default function Sidebar() {
                             <ul className="sub-nav">
                                 {categories.map((c, index)=>{
                                     return (c.subject === s.name)
-                                    ? <li key={index} id={index}><Link to={"/"+s.name+"/"+c.name}>{c.name}</Link></li>
+                                    ? ((props.view === 'admin')
+                                      ?(<li key={index} id={index}><Link to={"/admin/"+s.name+"/"+c.name}>{c.name}</Link></li>)
+                                      :(<li key={index} id={index}><Link to={"/"+s.name+"/"+c.name}>{c.name}</Link></li>))
                                     : null
                                     
                                 })}

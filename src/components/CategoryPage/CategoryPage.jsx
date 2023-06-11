@@ -5,7 +5,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import './CategoryPage.css'
 
 
-export default function CategoryPage() {
+export default function CategoryPage(props) {
   const { subject, category } = useParams();
   const [resources, setResources] = useState([]);
 
@@ -35,10 +35,16 @@ export default function CategoryPage() {
     <div className="row content-section">
       {/*<h1>{subject}</h1>
       <h2>{category}</h2>*/}
-      <Sidebar />
+      {
+        (props.view==='admin')
+        ? <Sidebar view='admin'/>
+        : <Sidebar />
+      }
+      
       <div className='col-lg-9'>
         <div className='row'>
-          {resources.filter((r) => (r.subject === subject && r.category === category))
+          {(props.view === 'admin')
+            ?(resources.filter((r) => (r.subject === subject && r.category === category))
             .map((r, index) => (
               <Resource
                 title={r.title}
@@ -50,9 +56,23 @@ export default function CategoryPage() {
                 subject={r.subject}
                 category={r.category}
                 id={r._id}
-              />
+                view='admin'
+              />)))
+            : (resources.filter((r) => (r.subject === subject && r.category === category))
+            .map((r, index) => (
+              <Resource
+                title={r.title}
+                key={r.id}
+                url={r.url}
+                authors={r.authors}
+                addedAt={r.addedAt.toString()}
+                description={r.description}
+                subject={r.subject}
+                category={r.category}
+                id={r._id}
+              />)))
 
-            ))}
+            }
         </div>
       </div>
     </div>
