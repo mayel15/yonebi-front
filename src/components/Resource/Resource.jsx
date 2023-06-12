@@ -8,7 +8,7 @@ export default function Resource(props) {
 
     const handleDelete = async () => {
 
-        await fetch(`http://localhost:8000/api/resources/${props.id}`, {
+        await fetch(`https://yonebi-back.vercel.app/api/resources/${props.id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

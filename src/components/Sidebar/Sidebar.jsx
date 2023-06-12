@@ -9,7 +9,7 @@ export default function Sidebar(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const categoriesResponse = await fetch('http://localhost:8000/api/categories', {
+        const categoriesResponse = await fetch('https://yonebi-back.vercel.app/api/categories', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ export default function Sidebar(props) {
         const categoriesData = await categoriesResponse.json();
         setCategories(categoriesData);
 
-        const subjectsResponse = await fetch('http://localhost:8000/api/subjects', {
+        const subjectsResponse = await fetch('https://yonebi-back.vercel.app/api/subjects', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

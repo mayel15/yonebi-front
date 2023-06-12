@@ -3,7 +3,7 @@ import {React, useState} from "react";
 export default function Category(props) {
     const handleDelete = async () => {
 
-        await fetch(`http://localhost:8000/api/categories/${props.id}`, {
+        await fetch(`https://yonebi-back.vercel.app/api/categories/${props.id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

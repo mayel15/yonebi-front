@@ -36,7 +36,7 @@ export default function AddResource() {
         || formData.category === ""){
             alert('Au moins un champ du formulaire est vide. :(')
         }else{
-        await fetch('http://localhost:8000/api/resources/add', {
+        await fetch('https://yonebi-back.vercel.app/api/resources/add', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

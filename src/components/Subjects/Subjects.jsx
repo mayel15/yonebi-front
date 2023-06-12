@@ -10,7 +10,7 @@ export default function Subjects() {
     useEffect(() => {
         const getSubjects = async () => {
             try {
-                const response = await fetch("http://localhost:8000/api/subjects/", {
+                const response = await fetch("https://yonebi-back.vercel.app/api/subjects/", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",

@@ -13,7 +13,7 @@ export default function Homepage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/resources/", {
+        const response = await fetch("https://yonebi-back.vercel.app/api/resources/", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

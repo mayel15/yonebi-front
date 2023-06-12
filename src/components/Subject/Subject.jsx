@@ -8,7 +8,7 @@ export default function Subject(props) {
 
     const handleDelete = async () => {
 
-        await fetch(`http://localhost:8000/api/subjects/${props.id}`, {
+        await fetch(`https://yonebi-back.vercel.app/api/subjects/${props.id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

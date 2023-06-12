@@ -9,7 +9,7 @@ export default function Categories() {
     useEffect(() => {
         const getCategories = async () => {
             try {
-                const response = await fetch("http://localhost:8000/api/categories/", {
+                const response = await fetch("https://yonebi-back.vercel.app/api/categories/", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
