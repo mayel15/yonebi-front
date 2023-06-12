@@ -58,9 +58,9 @@ export default function Homepage() {
         </div>
       
       </div>
-      
+      <Footer />
     </div>
-    <Footer />
+    
     </div>
   );
 }

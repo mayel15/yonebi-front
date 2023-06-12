@@ -89,8 +89,9 @@ export default function CategoryPage(props) {
             }
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
+      
     </div>
   )
 }
