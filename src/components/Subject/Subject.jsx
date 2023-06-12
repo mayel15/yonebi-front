@@ -16,7 +16,7 @@ export default function Subject(props) {
         })
             .then((response) => response.json())
             .then((data) => {
-                window.location.href = '/admin/subjects'
+                window.location.href = '/yonebi-front/admin/subjects'
                 console.log(data);
             })
             .catch((error) => {
@@ -25,7 +25,7 @@ export default function Subject(props) {
     }
 
     const handleEdit = async () => {
-        window.location.href = '/admin/editSubject'
+        window.location.href = '/yonebi-front/admin/editSubject'
 
     }
 

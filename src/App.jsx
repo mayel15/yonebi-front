@@ -18,16 +18,16 @@ function App() {
     <Router >
       <HeaderNav />
       <Routes>
-        <Route path='/' element={<Homepage />} />
-        <Route path='/:subject/:category' element={<CategoryPage />} />
-        <Route path='/infos' element={<Informations />} />
-        <Route path='/admin/login' element={<Login access="login" />} />
-        <Route path='/admin/signup' element={<Login access="signup" />} />
-        <Route path='/admin/add' element={<AddResource />} />
-        <Route path='/admin/home' element={<AdminHome/>} />
-        <Route path='/admin/subjects' element={<Subjects />} />  
-        <Route path='/admin/categories' element={<Categories />} />
-        <Route path='/admin/:subject/:category' element={<CategoryPage view='admin'/>} />
+        <Route path='/yonebi-front/' element={<Homepage />} />
+        <Route path='/yonebi-front/:subject/:category' element={<CategoryPage />} />
+        <Route path='/yonebi-front/infos' element={<Informations />} />
+        <Route path='/yonebi-front/admin/login' element={<Login access="login" />} />
+        <Route path='/yonebi-front/admin/signup' element={<Login access="signup" />} />
+        <Route path='/yonebi-front/admin/add' element={<AddResource />} />
+        <Route path='/yonebi-front/admin/home' element={<AdminHome/>} />
+        <Route path='/yonebi-front/admin/subjects' element={<Subjects />} />  
+        <Route path='/yonebi-front/admin/categories' element={<Categories />} />
+        <Route path='/yonebi-front/admin/:subject/:category' element={<CategoryPage view='admin'/>} />
       </Routes>
     </Router>
   );

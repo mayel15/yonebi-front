@@ -25,7 +25,7 @@ export default function Resource(props) {
     }
 
     const handleEdit = async () => {
-        window.location.href = '/admin/editResource'
+        window.location.href = '/yonebi-front/admin/editResource'
 
     }
 

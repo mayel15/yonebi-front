@@ -31,8 +31,8 @@ export default function Login(props) {
             .then((data) => {
                 console.log(data);
                 (props.access === "login")
-                ? window.location.href = '/admin/home'
-                : window.location.href = '/admin/login'
+                ? window.location.href = '/yonebi-front/admin/home'
+                : window.location.href = '/yonebi-front/admin/login'
             })
             .catch((error) => {
                 console.error(error);

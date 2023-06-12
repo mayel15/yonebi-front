@@ -46,7 +46,7 @@ export default function AddResource() {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                window.location.href = '/admin/home'
+                window.location.href = '/yonebi-front/admin/home'
             })
             .catch((error) => {
                 console.error(error);

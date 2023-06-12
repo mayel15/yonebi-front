@@ -46,8 +46,8 @@ export default function Sidebar(props) {
                                 {categories.map((c, index)=>{
                                     return (c.subject === s.name)
                                     ? ((props.view === 'admin')
-                                      ?(<li key={index} id={index}><Link to={"/admin/"+s.name+"/"+c.name}>{c.name}</Link></li>)
-                                      :(<li key={index} id={index}><Link to={"/"+s.name+"/"+c.name}>{c.name}</Link></li>))
+                                      ?(<li key={index} id={index}><Link to={"/yonebi-front/admin/"+s.name+"/"+c.name}>{c.name}</Link></li>)
+                                      :(<li key={index} id={index}><Link to={"/yonebi-front/"+s.name+"/"+c.name}>{c.name}</Link></li>))
                                     : null
                                     
                                 })}

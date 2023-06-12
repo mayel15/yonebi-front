@@ -5,7 +5,7 @@ export default function GestionButtons() {
     return (
         <div className="text-center button-gestion">
             <button>
-                <Link to='/admin/home/' >Gérer les ressources</Link>
+                <Link to='/yonebi-front/admin/home/' >Gérer les ressources</Link>
             </button>
             <button
             >
@@ -13,10 +13,10 @@ export default function GestionButtons() {
             </button>
             <button
             >
-                <Link to='/admin/subjects/' >Gérer les sujets</Link>
+                <Link to='/yonebi-front/admin/subjects/' >Gérer les sujets</Link>
             </button>
             <button>
-                <Link to='/admin/categories/' >Gérer les catégories</Link>
+                <Link to='/yonebi-front/admin/categories/' >Gérer les catégories</Link>
             </button>
         </div>
     )
