@@ -16,7 +16,7 @@ export default function Resource(props) {
         })
             .then((response) => response.json())
             .then((data) => {
-                window.location.href = '/admin/home'
+                window.location.href = '/yonebi-front/admin/home'
                 console.log(data);
             })
             .catch((error) => {

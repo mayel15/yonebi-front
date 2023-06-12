@@ -72,7 +72,7 @@ export default function AddResource() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const categoriesResponse = await fetch('http://localhost:8000/api/categories', {
+                const categoriesResponse = await fetch('https://yonebi-back.vercel.app/api/categories', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ export default function AddResource() {
                 const categoriesData = await categoriesResponse.json();
                 setCategories(categoriesData);
 
-                const subjectsResponse = await fetch('http://localhost:8000/api/subjects', {
+                const subjectsResponse = await fetch('https://yonebi-back.vercel.app/api/subjects', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
