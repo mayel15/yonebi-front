@@ -9,7 +9,7 @@ export default function GestionButtons() {
             </button>
             <button
             >
-                <Link to='/yonebi-front//admin/add' >Ajouter une ressource</Link>
+                <Link to='/yonebi-front/admin/add' >Ajouter une ressource</Link>
             </button>
             <button
             >
