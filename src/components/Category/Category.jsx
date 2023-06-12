@@ -11,7 +11,7 @@ export default function Category(props) {
         })
             .then((response) => response.json())
             .then((data) => {
-                window.location.href = '/yonebi-front/admin/categories'
+                window.location.href = '/admin/categories'
                 console.log(data);
             })
             .catch((error) => {
@@ -20,7 +20,7 @@ export default function Category(props) {
     }
 
     const handleEdit = async () => {
-        window.location.href = '/yonebi-front/admin/editCategory'
+        window.location.href = '/admin/editCategory'
 
     }
 
