@@ -4,6 +4,7 @@ export default function Login(props) {
     const [formData, setFormData] = useState({
         username: "",
         password: "",
+        passwordSecurity: ""
     });
 
     const handleChange = (event) => {
@@ -30,7 +31,7 @@ export default function Login(props) {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                (props.access === "login")
+                (props.access === "login" && data.message === 'is connected')
                 ? window.location.href = '/admin/home'
                 : window.location.href = '/admin/login'
             })
@@ -75,7 +76,7 @@ export default function Login(props) {
                     <label htmlFor="passwordSecurity">Mot de passe de securite</label>
                     <input
                     type="password"
-                    name="password"
+                    name="passwordSecurity"
                     value={formData.passwordSecurity}
                     placeholder="Mot de passe de securite"
                     onChange={handleChange}
