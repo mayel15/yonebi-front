@@ -176,7 +176,7 @@ export default function AddResource() {
                 </div>
 
                 <div>
-                    <label htmlFor="passwordSecurity">Auteurs</label>
+                    <label htmlFor="passwordSecurity">Mot de passe de sécurité</label>
                     <input type='password' name="passwordSecurity" value={formData.passwordSecurity} placeholder="Mot de passe de sécurité" onChange={handleChange} />
                 </div>
 
