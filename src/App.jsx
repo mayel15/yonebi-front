@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Homepage from './components/Homepage/Homepage';
 import Login from './components/Login';
 import HeaderNav from './components/Header/HeaderNav';
@@ -17,7 +17,7 @@ function App() {
   return (
     <Router >
       <HeaderNav />
-      <Routes>
+      <Switch>
         <Route path='/yonebi-front/' element={<Homepage />} />
         <Route path='/yonebi-front/:subject/:category' element={<CategoryPage />} />
         <Route path='/yonebi-front/infos' element={<Informations />} />
@@ -28,7 +28,7 @@ function App() {
         <Route path='/yonebi-front/admin/subjects' element={<Subjects />} />  
         <Route path='/yonebi-front/admin/categories' element={<Categories />} />
         <Route path='/yonebi-front/admin/:subject/:category' element={<CategoryPage view='admin'/>} />
-      </Routes>
+      </Switch>
     </Router>
   );
 }
