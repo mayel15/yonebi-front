@@ -47,7 +47,13 @@ export default function AddResource() {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                window.location.href = '/admin/home'
+                if(data.message){
+                    alert(data.message)
+                    window.location.href = '/admin/add'
+                }else {
+                    window.location.href = '/admin/home'
+                }
+                
             })
             .catch((error) => {
                 console.error(error);
