@@ -11,6 +11,7 @@ export default function AddResource() {
         authors: "",
         subject: "",
         category: "",
+        passwordSecurity: ""
     });
 
     const [temoinS, setTemoinS] = useState(false)
@@ -174,6 +175,10 @@ export default function AddResource() {
                     }
                 </div>
 
+                <div>
+                    <label htmlFor="passwordSecurity">Auteurs</label>
+                    <input type='password' name="passwordSecurity" value={formData.passwordSecurity} placeholder="Mot de passe de sécurité" onChange={handleChange} />
+                </div>
 
                 <button
                     type="submit"
