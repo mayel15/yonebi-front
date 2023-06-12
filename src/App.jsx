@@ -24,7 +24,7 @@ function App() {
         <Route path='/yonebi-front/admin/login' element={<Login access="login" />} />
         <Route path='/yonebi-front/admin/signup' element={<Login access="signup" />} />
         <Route path='/yonebi-front/admin/add' element={<AddResource />} />
-        <Route path='/yonebi-front/admin/home' element={<AdminHome/>} />
+        <Route path='/yonebi-front/admin/home' element={<AdminHome />} />
         <Route path='/yonebi-front/admin/subjects' element={<Subjects />} />  
         <Route path='/yonebi-front/admin/categories' element={<Categories />} />
         <Route path='/yonebi-front/admin/:subject/:category' element={<CategoryPage view='admin'/>} />
