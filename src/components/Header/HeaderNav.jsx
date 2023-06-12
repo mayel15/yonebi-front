@@ -7,7 +7,7 @@ export default function HeaderNav() {
     return (
         <nav class="navbar bg-body-tertiary header-nav content-section">
             <div class="container-fluid">
-                <a href="/" class="navbar-brand">yonebi.</a>
+                <a href="/yonebi-front" class="navbar-brand">yonebi.</a>
                 <Search />
                 <div className="icons-header">
                     <div>
