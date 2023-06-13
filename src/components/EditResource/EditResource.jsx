@@ -1,22 +1,22 @@
 import { React, useState, useEffect } from "react";
+import GestionButtons from "../GestionButtons/GestionButtons";
 
 
 
-export default function AddResource() {
+export default function EditResource(props) {
     const [formData, setFormData] = useState({
-        title: "",
-        url: "",
-        description: "",
-        authors: "",
-        subject: "",
-        category: "",
+        title: props.title,
+        url: props.url,
+        description: props.description,
+        authors: props.authors,
+        subject: props.subject,
+        category: props.category
     });
 
     const [temoinS, setTemoinS] = useState(false)
     const [temoinC, setTemoinC] = useState(false)
     const [categories, setCategories] = useState([]);
     const [subjects, setSubjects] = useState([]);
-    const [rsources, s] = useState([]);
 
     const handleChange = (event) => {
         setFormData({
@@ -36,8 +36,8 @@ export default function AddResource() {
         || formData.category === ""){
             alert('Au moins un champ du formulaire est vide. :(')
         }else{
-        await fetch('http://localhost:8000/api/resources/add', {
-            method: "POST",
+        await fetch(`https://yonebi-back.vercel.app/api/resources/${props.id}`, {
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -46,7 +46,11 @@ export default function AddResource() {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                window.location.href = '/admin/home'
+                if(data.message){
+                    alert(data.message)
+                    window.location.href = '/admin/home'
+                }
+                
             })
             .catch((error) => {
                 console.error(error);
@@ -72,7 +76,7 @@ export default function AddResource() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const categoriesResponse = await fetch('http://localhost:8000/api/categories', {
+                const categoriesResponse = await fetch('https://yonebi-back.vercel.app/api/categories', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -81,7 +85,7 @@ export default function AddResource() {
                 const categoriesData = await categoriesResponse.json();
                 setCategories(categoriesData);
 
-                const subjectsResponse = await fetch('http://localhost:8000/api/subjects', {
+                const subjectsResponse = await fetch('https://yonebi-back.vercel.app/api/subjects', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -89,16 +93,6 @@ export default function AddResource() {
                 });
                 const subjectsData = await subjectsResponse.json();
                 setSubjects(subjectsData);
-
-                const resourcesResponse = await fetch('http://localhost:8000/api/resources', {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-                const resourcesData = await subjectsResponse.json();
-                const resourcesFiltered = resourcesData.filter((r)=>{}).
-                setFormData(subjectsData);
             } catch (error) {
                 console.error(error);
             }
@@ -108,7 +102,8 @@ export default function AddResource() {
     }, []);
 
     return (
-        <div>
+        <div className="text-center">
+        <h3>Modification</h3>
             <button
                 onClick={toggleS}
             >
@@ -121,7 +116,7 @@ export default function AddResource() {
                 onClick={toggleC}
             >
                 {(!temoinS) 
-                ? <div>Ajouter un catégorie</div> 
+                ? <div>Ajouter une catégorie</div> 
                 : <div>Sélectionner une catégorie</div>  
                 }
             </button>
@@ -173,7 +168,7 @@ export default function AddResource() {
                             : (
                                 <select value={formData.category} name="category" onChange={handleChange}>
                                     <option value="">Select an option</option>
-                                    {categories.map((c)=>{
+                                    {categories.filter((cat)=>(cat.subject===formData.subject)).map((c)=>{
                                         return(<option value={c.name}> {c.name} </option>)
                                     })}
                                 </select>
@@ -181,14 +176,13 @@ export default function AddResource() {
 
                     }
                 </div>
-
-
                 <button
                     type="submit"
                 >
                     Modifier
                 </button>
             </form>
+
 
         </div>
     )

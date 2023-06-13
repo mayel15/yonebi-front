@@ -1,9 +1,10 @@
 import { React, useEffect, useState } from "react";
 import './Resource.css'
+import EditResource from "../EditResource/EditResource";
 
 export default function Resource(props) {
 
-    const [resources, setResources] = useState([]);
+    const [isClicked, setIsClicked] = useState(false);
 
 
     const handleDelete = async () => {
@@ -25,8 +26,7 @@ export default function Resource(props) {
     }
 
     const handleEdit = async () => {
-        window.location.href = '/admin/editResource'
-
+        (isClicked) ? setIsClicked(false) : setIsClicked(true)
     }
 
 
@@ -40,13 +40,18 @@ export default function Resource(props) {
             <p>{props.addedAt}</p>
             {
                 (props.view === 'admin')
-                    ? (
+                    ? (<div>
                         <div className="icons">
                             <button
                                 className="icon-card"
                                 onClick={handleEdit}
                             >
-                                <i class="fa-solid fa-pen"></i>
+                                {
+                                    (isClicked)
+                                        ? <div>Annuler la modification</div>
+                                        : <i class="fa-solid fa-pen"></i>
+                                }
+
                             </button>
                             <button
                                 className="icon-card"
@@ -54,10 +59,26 @@ export default function Resource(props) {
                             >
                                 <i class="fa-sharp fa-solid fa-trash"></i>
                             </button>
+
                         </div>
+                        {
+                            (isClicked)
+                                ?
+                                <EditResource
+                                    title={props.title}
+                                    url={props.url}
+                                    description={props.description}
+                                    authors={props.authors}
+                                    subject={props.subject}
+                                    category={props.category}
+                                    id={props.id}
+                                />
+                                : null
+                        }
+                    </div>
                     )
                     : null
-        }
+            }
 
 
 
