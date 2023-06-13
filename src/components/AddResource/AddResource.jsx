@@ -172,7 +172,7 @@ export default function AddResource() {
                             : (
                                 <select value={formData.category} name="category" onChange={handleChange}>
                                     <option value="">Select an option</option>
-                                    {categories.map((c)=>{
+                                    {categories.filter((cat)=>(cat.subject===formData.subject)).map((c)=>{
                                         return(<option value={c.name}> {c.name} </option>)
                                     })}
                                 </select>

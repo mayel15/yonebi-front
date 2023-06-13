@@ -1,6 +1,10 @@
 import {React, useState} from "react";
+import EditCategory from "../EditCategory";
+
 
 export default function Category(props) {
+
+    const [isClicked, setIsClicked] = useState(false);
     const handleDelete = async () => {
 
         await fetch(`https://yonebi-back.vercel.app/api/categories/${props.id}`, {
@@ -11,6 +15,7 @@ export default function Category(props) {
         })
             .then((response) => response.json())
             .then((data) => {
+                alert(data.message)
                 window.location.href = '/admin/categories'
                 console.log(data);
             })
@@ -20,8 +25,7 @@ export default function Category(props) {
     }
 
     const handleEdit = async () => {
-        window.location.href = '/admin/editCategory'
-
+        (isClicked) ? setIsClicked(false) : setIsClicked(true)
     }
 
     return (
@@ -33,7 +37,11 @@ export default function Category(props) {
                     className="icon-card"
                     onClick={handleEdit}
                 >
-                    <i class="fa-solid fa-pen"></i>
+                    {
+                        (isClicked)
+                        ? <div>Annuler la modification</div>
+                        : <i class="fa-solid fa-pen"></i>
+                    }
                 </button>
                 <button
                     className="icon-card"
@@ -42,6 +50,15 @@ export default function Category(props) {
                     <i class="fa-sharp fa-solid fa-trash"></i>
                 </button>
             </div>
+            {(isClicked)
+            ?
+            <EditCategory
+                name={props.name}
+                subject={props.subject}
+                id={props.id}
+            />
+            : null
+            }
         </div>
     )
 }
