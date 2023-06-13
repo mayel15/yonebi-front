@@ -1,9 +1,10 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import './Subject.css'
+import EditSubject from "../EditSubject";
 
 export default function Subject(props) {
 
-    const [subjects, setSubjects] = useState([]);
+    const [isClicked, setIsClicked] = useState(false);
 
 
     const handleDelete = async () => {
@@ -26,8 +27,7 @@ export default function Subject(props) {
     }
 
     const handleEdit = async () => {
-        window.location.href = '/admin/editSubject'
-
+        (isClicked) ? setIsClicked(false) : setIsClicked(true)
     }
 
     return (
@@ -38,7 +38,11 @@ export default function Subject(props) {
                     className="icon-card"
                     onClick={handleEdit}
                 >
-                    <i class="fa-solid fa-pen"></i>
+                    {
+                        (isClicked)
+                        ? <div>Annuler la modification</div>
+                        : <i class="fa-solid fa-pen"></i>
+                    }
                 </button>
                 <button
                     className="icon-card"
@@ -47,6 +51,14 @@ export default function Subject(props) {
                     <i class="fa-sharp fa-solid fa-trash"></i>
                 </button>
             </div>
+            {(isClicked)
+            ?
+            <EditSubject
+                name={props.name}
+                id={props.id}
+            />
+            : null
+            }
         </div>
     )
 }
