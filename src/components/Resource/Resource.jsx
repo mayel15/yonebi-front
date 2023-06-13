@@ -17,6 +17,7 @@ export default function Resource(props) {
         })
             .then((response) => response.json())
             .then((data) => {
+                alert(data.message)
                 window.location.href = '/admin/home'
                 console.log(data);
             })
