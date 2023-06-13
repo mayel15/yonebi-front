@@ -16,6 +16,7 @@ export default function Subject(props) {
         })
             .then((response) => response.json())
             .then((data) => {
+                alert(data.message)
                 window.location.href = '/admin/subjects'
                 console.log(data);
             })

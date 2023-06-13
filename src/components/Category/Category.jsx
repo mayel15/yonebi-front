@@ -11,6 +11,7 @@ export default function Category(props) {
         })
             .then((response) => response.json())
             .then((data) => {
+                alert(data.message)
                 window.location.href = '/admin/categories'
                 console.log(data);
             })
