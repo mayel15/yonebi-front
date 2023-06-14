@@ -119,7 +119,7 @@ export default function AddResource() {
             <button
                 onClick={toggleC}
             >
-                {(!temoinS) 
+                {(!temoinC) 
                 ? <div>Ajouter une catégorie</div> 
                 : <div>Sélectionner une catégorie</div>  
                 }
