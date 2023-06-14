@@ -136,7 +136,12 @@ export default function AddResource() {
                 </div>
                 <div>
                     <label htmlFor="description">Description</label>
-                    <input type='text' name="description" value={formData.description} placeholder="Description" onChange={handleChange} />
+                    <textarea
+                        name="description"
+                        value={formData.description}
+                        placeholder="Description"
+                        onChange={handleChange}
+                      />
                 </div>
                 <div>
                     <label htmlFor="authors">Auteurs</label>
