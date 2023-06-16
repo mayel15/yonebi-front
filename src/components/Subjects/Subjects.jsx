@@ -36,9 +36,8 @@ export default function Subjects() {
             <div className="content-center row">
 
                 {
-                    subjects.map((s, index) => (
+                    subjects.map((s) => (
                         <Subject
-                            key={s.id}
                             name={s.name}
                             id={s._id}
                         />)

@@ -35,9 +35,8 @@ export default function Categories() {
             <div className="content-center row">
 
                 {
-                    categories.map((c, index) => (
+                    categories.map((c) => (
                         <Category
-                            key={c.id}
                             name={c.name}
                             subject={c.subject}
                             id={c._id}
